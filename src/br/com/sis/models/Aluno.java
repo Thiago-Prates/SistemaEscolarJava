@@ -1,7 +1,11 @@
 package br.com.sis.models;
 
-public class Aluno extends Pessoa{
+public class Aluno extends Pessoa {
 	private double nota;
+
+	public String toString() {
+		return super.toString();
+	}
 
 	public Aluno() {
 	}
@@ -13,6 +17,5 @@ public class Aluno extends Pessoa{
 	public void setNota(double nota) {
 		this.nota = nota;
 	}
-	
-	
+
 }

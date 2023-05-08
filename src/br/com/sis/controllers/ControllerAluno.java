@@ -14,7 +14,7 @@ public abstract class ControllerAluno {
     do {
       String[] menuPrincipal = { "Cadastrar", "Remover", "Listar", "Pesquisar", "Voltar" };
       int op = JOptionPane.showOptionDialog(null,
-          ":: Menu Alunos  :: \nAlunos Cadastrados: " + alunoService.getTotalItens()
+          ":: Menu Alunos  :: \nAlunos cadastrados: " + alunoService.getTotalItens()
               + " \n\n\n\n\n\n\n\n\nDefina sua opção:",
           "Sistema POO", 1, 1, null, menuPrincipal, menuPrincipal[0]);
 
@@ -36,15 +36,17 @@ public abstract class ControllerAluno {
             printAlunos += aluno.getNome() + "\n";
           }
 
-          JOptionPane.showConfirmDialog(null, printAlunos, "Alunos cadastrados", 1);
+          JOptionPane.showConfirmDialog(null, printAlunos, "Alunos cadastrados", JOptionPane.OK_OPTION);
           break;
         }
 
         case 3: {
           int cpf = Integer
-              .parseInt(JOptionPane.showInputDialog(null, "Digite o CPF que deseja pesquisar: ", "Pesquisar Aluno"));
+              .parseInt(JOptionPane.showInputDialog(null, "Digite o CPF que deseja pesquisar: "));
+          Aluno aluno = alunoService.getAluno(cpf);
 
-          alunoService.getAluno(cpf);
+          String messageAluno = (aluno != null) ? aluno.toString() : "Aluno não encontrado";
+          JOptionPane.showMessageDialog(null, messageAluno, "Pesquisar aluno", JOptionPane.PLAIN_MESSAGE);
           break;
         }
 

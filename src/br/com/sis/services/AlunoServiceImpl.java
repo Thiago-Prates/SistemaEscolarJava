@@ -63,7 +63,7 @@ public class AlunoServiceImpl implements IService {
 	public Aluno getAluno(int cpf) {
 		Aluno aluno = repositoryAluno.getAluno(cpf);
 
-		if (aluno != null) {
+		if (aluno == null) {
 			JOptionPane.showMessageDialog(null, "Aluno não encontrado!");
 		}
 
@@ -81,8 +81,7 @@ public class AlunoServiceImpl implements IService {
 		String statusAluno = notaAluno < 40 ? "Reprovado" : notaAluno < 60 ? "Exame Especial" : "Aprovado";
 
 		JOptionPane.showMessageDialog(null,
-				"Nota do aluno: " + nomeAluno + "\n\nNota: " + notaAluno + "Status: " + statusAluno, null,
-				cpf);
+				"Nota do aluno: " + nomeAluno + "\n\nNota: " + notaAluno + "Status: " + statusAluno);
 	}
 
 }
