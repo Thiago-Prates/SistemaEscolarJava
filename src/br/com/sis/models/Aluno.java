@@ -4,7 +4,11 @@ public class Aluno extends Pessoa {
 	private double nota;
 
 	public String toString() {
-		return super.toString();
+		return "Aluno [codigo=" + super.getCodigo() + ", cpf=" + super.getCpf()
+				+ ", cpf=" + super.getCpf()
+				+ ", nome=" + super.getNome()
+				+ ", nota=" + nota
+				+ "]";
 	}
 
 	public Aluno() {
